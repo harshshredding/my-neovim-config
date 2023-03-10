@@ -8,6 +8,11 @@ filetype plugin indent on
 
 syntax enable
 
+" Improve searching
+set ignorecase
+set smartcase
+set incsearch
+
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -60,12 +65,6 @@ vnoremap <c-f> <Esc>:BLines<CR>
 nnoremap <c-r> :History:<CR>
 inoremap <c-r> <Esc>:History:<CR>
 vnoremap <c-r> <Esc>:History:<CR>
-
-" Run go file
-nnoremap <A-i> :GoRun<CR>
-inoremap <A-i> <Esc>:GoRun<CR>
-vnoremap <A-i> <Esc>:GoRun<CR>
-
 
 " Save file
 map <c-s> :w<CR>
@@ -146,5 +145,22 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+"Close other splits
+nmap <silent> qw :only<CR>
+
+"Soft linebreaks 
+"set wrap linebreak nolist
+
+" move between soft lines
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
+
+" latex settings
+let g:tex_flavor = 'latex'           " Vim ships with some support for plain TeX, ConTeXt, and LaTeX files. This means that the `.tex` extension is ambiguous. Vimtex is only activated for LaTeX files with 'filetype' set to `tex`.
+let g:vimtex_view_method = 'mupdf'   "  Set the pdf viewer. MuPDF supports forward and backward search via xdotool. For backward search use :VimtexRSearch command. Forward search will only take you to the correct page.  Backward search will take you to the line in Vim that corresponds to the first line of the current page in MuPDF.
+let g:vimtex_compiler_latexmk= {'options' : ['-pdf', '-shell-escape', '-verbose', '-file-line-error', '-synctex=1', '-interaction=nonstopmode',],} " we need to enable -shell-escape to be able to use externalization library for avioiding recompiling unchanged diagrams/graphs created using tikz/pgfplots
+let g:vimtex_format_enabled = 1
 
 lua require('config')
