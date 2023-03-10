@@ -52,6 +52,10 @@ nnoremap <A-f> :Files ~/<CR>
 inoremap <A-f> <Esc>:Files ~/<CR>
 vnoremap <A-f> <Esc>:Files ~/<CR>
 
+nnoremap <A-e> :Files ./<CR>
+inoremap <A-e> <Esc>:Files ./<CR>
+vnoremap <A-e> <Esc>:Files ./<CR>
+
 " load vimrc
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
@@ -162,5 +166,10 @@ let g:tex_flavor = 'latex'           " Vim ships with some support for plain TeX
 let g:vimtex_view_method = 'mupdf'   "  Set the pdf viewer. MuPDF supports forward and backward search via xdotool. For backward search use :VimtexRSearch command. Forward search will only take you to the correct page.  Backward search will take you to the line in Vim that corresponds to the first line of the current page in MuPDF.
 let g:vimtex_compiler_latexmk= {'options' : ['-pdf', '-shell-escape', '-verbose', '-file-line-error', '-synctex=1', '-interaction=nonstopmode',],} " we need to enable -shell-escape to be able to use externalization library for avioiding recompiling unchanged diagrams/graphs created using tikz/pgfplots
 let g:vimtex_format_enabled = 1
+" Don't open window when there are only warnings.
+let g:vimtex_quickfix_open_on_warning = 0
+
+" set color scheme
+colorscheme evening
 
 lua require('config')
