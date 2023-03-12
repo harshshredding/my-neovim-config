@@ -26,14 +26,13 @@ set number
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
   Plug 'junegunn/fzf.vim'
-  Plug 'udalov/kotlin-vim'
-  Plug 'williamboman/mason.nvim'
-  Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-  Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   " Use release branch (recommended)
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'lervag/vimtex'
+  Plug 'tanvirtin/monokai.nvim'
+  Plug 'micha/vim-colors-solarized'
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 call plug#end()
 
 
@@ -169,7 +168,8 @@ let g:vimtex_format_enabled = 1
 " Don't open window when there are only warnings.
 let g:vimtex_quickfix_open_on_warning = 0
 
-" set color scheme
-colorscheme evening
+" Set tokyo theme
+" colorscheme tokyonight-moon
+colorscheme monokai
 
 lua require('config')

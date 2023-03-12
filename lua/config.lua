@@ -8,5 +8,4 @@ end)
 
 require("mason").setup()
 require("mason-lspconfig").setup()
-require'lspconfig'.kotlin_language_server.setup{}
-require'lspconfig'.pyright.setup{}
+-- require'lspconfig'.pyright.setup{}
