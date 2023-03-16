@@ -13,9 +13,10 @@ set ignorecase
 set smartcase
 set incsearch
 
-" show existing tab with 4 spaces width
+
+" Show existing tab with 4 spaces width
 set tabstop=4
-" when indenting with '>', use 4 spaces width
+" When indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
@@ -159,10 +160,12 @@ nmap <silent> qw :only<CR>
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
+" switch to terminal
+nmap <c-t> :b term<CR>
 
 " latex settings
 let g:tex_flavor = 'latex'           " Vim ships with some support for plain TeX, ConTeXt, and LaTeX files. This means that the `.tex` extension is ambiguous. Vimtex is only activated for LaTeX files with 'filetype' set to `tex`.
-let g:vimtex_view_method = 'mupdf'   "  Set the pdf viewer. MuPDF supports forward and backward search via xdotool. For backward search use :VimtexRSearch command. Forward search will only take you to the correct page.  Backward search will take you to the line in Vim that corresponds to the first line of the current page in MuPDF.
+let g:vimtex_view_method = 'zathura'   "  Set the pdf viewer. MuPDF supports forward and backward search via xdotool. For backward search use :VimtexRSearch command. Forward search will only take you to the correct page.  Backward search will take you to the line in Vim that corresponds to the first line of the current page in MuPDF.
 let g:vimtex_compiler_latexmk= {'options' : ['-pdf', '-shell-escape', '-verbose', '-file-line-error', '-synctex=1', '-interaction=nonstopmode',],} " we need to enable -shell-escape to be able to use externalization library for avioiding recompiling unchanged diagrams/graphs created using tikz/pgfplots
 let g:vimtex_format_enabled = 1
 " Don't open window when there are only warnings.
@@ -170,6 +173,9 @@ let g:vimtex_quickfix_open_on_warning = 0
 
 " Set tokyo theme
 " colorscheme tokyonight-moon
-colorscheme monokai
+" colorscheme monokai
+
+" Escape to normal mode from inside the terminal.
+:tnoremap <Esc> <C-\><C-n>
 
 lua require('config')
