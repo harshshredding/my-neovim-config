@@ -161,7 +161,7 @@ nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " switch to terminal
-nmap <c-t> :b term<CR>
+nmap <c-t> :b term<CR>i
 
 " latex settings
 let g:tex_flavor = 'latex'           " Vim ships with some support for plain TeX, ConTeXt, and LaTeX files. This means that the `.tex` extension is ambiguous. Vimtex is only activated for LaTeX files with 'filetype' set to `tex`.
