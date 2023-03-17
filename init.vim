@@ -178,4 +178,7 @@ let g:vimtex_quickfix_open_on_warning = 0
 " Escape to normal mode from inside the terminal.
 :tnoremap <Esc> <C-\><C-n>
 
+" quit terminal
+:tnoremap <A-w> <C-\><C-n>:q<CR>
+
 lua require('config')
