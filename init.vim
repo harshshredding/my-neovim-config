@@ -1,3 +1,4 @@
+" test
 let &runtimepath.=','.string('~/')
 
 
@@ -176,7 +177,7 @@ let g:vimtex_quickfix_open_on_warning = 0
 " colorscheme monokai
 
 " Escape to normal mode from inside the terminal.
-:tnoremap <Esc> <C-\><C-n>
+:tnoremap <C-n> <C-\><C-n>
 
 " quit terminal
 :tnoremap <A-w> <C-\><C-n>:q<CR>
