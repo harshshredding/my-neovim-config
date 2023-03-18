@@ -78,9 +78,6 @@ inoremap <c-s> <Esc>:w<CR>
 " redo
 map <A-u> :redo<CR>
 
-" info
-map <C-i> :GoInfo<CR>
-
 " Always copy to clipboad
 nnoremap yy "+yy
 vnoremap y "+y
