@@ -35,6 +35,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tanvirtin/monokai.nvim'
   Plug 'micha/vim-colors-solarized'
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+  Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
 call plug#end()
 
 
