@@ -64,19 +64,6 @@ nnoremap <M-f> :Files<CR>
 inoremap <M-f> <Esc>:Files<CR>
 vnoremap <M-f> <Esc>:Files<CR>
 
-nnoremap <A-f> :Files ~/<CR>
-inoremap <A-f> <Esc>:Files ~/<CR>
-vnoremap <A-f> <Esc>:Files ~/<CR>
-
-nnoremap <A-e> :Files ./<CR>
-inoremap <A-e> <Esc>:Files ./<CR>
-vnoremap <A-e> <Esc>:Files ./<CR>
-
-" Mac settings
-nnoremap ∆ :Files ./<CR>
-inoremap ∆ <Esc>:Files ./<CR>
-vnoremap ∆ <Esc>:Files ./<CR>
-
 " load vimrc
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
@@ -156,6 +143,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> ag :Ack -i --python 
 
 " Rename coc
 nmap <silent> rn <Plug>(coc-rename)
