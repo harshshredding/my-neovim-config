@@ -1,6 +1,20 @@
+filetype off
+set nocompatible
+
 " test
 let &runtimepath.=','.string('~/')
+" Add Vundle to rtp
+set rtp+=~/.vim/bundle/Vundle.vim
 
+" Vundle plugins
+call vundle#begin()
+    Plugin 'mileszs/ack.vim'
+call vundle#end() 
+
+" Use Silver searcher
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " remap leader
 let mapleader = ","
@@ -33,11 +47,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'lervag/vimtex'
   Plug 'tanvirtin/monokai.nvim'
-  Plug 'micha/vim-colors-solarized'
-  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-  Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
+  Plug 'vim-python/python-syntax'
 call plug#end()
 
+" Python syntax highlighting
+let g:python_highlight_all = 1
 
 " seach history of open files
 nnoremap <c-e> :History<CR>
@@ -46,9 +60,9 @@ vnoremap <c-e> <Esc>:History<CR>
 
 "execute \"set <M-f>=\ef"
 " search all files 
-"nnoremap <M-f> :Files ~/<CR>
-"inoremap <M-f> <Esc>:Files ~/<CR>
-"vnoremap <M-f> <Esc>:Files ~/<CR>
+nnoremap <M-f> :Files<CR>
+inoremap <M-f> <Esc>:Files<CR>
+vnoremap <M-f> <Esc>:Files<CR>
 
 nnoremap <A-f> :Files ~/<CR>
 inoremap <A-f> <Esc>:Files ~/<CR>
@@ -57,6 +71,11 @@ vnoremap <A-f> <Esc>:Files ~/<CR>
 nnoremap <A-e> :Files ./<CR>
 inoremap <A-e> <Esc>:Files ./<CR>
 vnoremap <A-e> <Esc>:Files ./<CR>
+
+" Mac settings
+nnoremap ∆ :Files ./<CR>
+inoremap ∆ <Esc>:Files ./<CR>
+vnoremap ∆ <Esc>:Files ./<CR>
 
 " load vimrc
 nnoremap <Leader>sv :source $MYVIMRC<CR>
@@ -172,7 +191,7 @@ let g:vimtex_quickfix_open_on_warning = 0
 
 " Set tokyo theme
 " colorscheme tokyonight-moon
-" colorscheme monokai
+colorscheme monokai
 
 " Escape to normal mode from inside the terminal.
 :tnoremap <C-n> <C-\><C-n>
@@ -180,4 +199,4 @@ let g:vimtex_quickfix_open_on_warning = 0
 " quit terminal
 :tnoremap <A-w> <C-\><C-n>:q<CR>
 
-lua require('config')
+" lua require('config')
