@@ -144,6 +144,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> ag :Ack -i --python 
+nmap <c-t> :CocCommand pyright.fileTest<CR>
 
 " Rename coc
 nmap <silent> rn <Plug>(coc-rename)
@@ -167,7 +168,7 @@ nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 
 " switch to terminal
-nmap <c-t> :b term<CR>i
+" nmap <c-t> :b term<CR>i
 
 " latex settings
 let g:tex_flavor = 'latex'           " Vim ships with some support for plain TeX, ConTeXt, and LaTeX files. This means that the `.tex` extension is ambiguous. Vimtex is only activated for LaTeX files with 'filetype' set to `tex`.
@@ -179,7 +180,7 @@ let g:vimtex_quickfix_open_on_warning = 0
 
 " Set tokyo theme
 " colorscheme tokyonight-moon
-colorscheme monokai
+colorscheme monokai_ristretto
 
 " Escape to normal mode from inside the terminal.
 :tnoremap <C-n> <C-\><C-n>
