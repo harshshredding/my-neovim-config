@@ -48,7 +48,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'lervag/vimtex'
   Plug 'tanvirtin/monokai.nvim'
   Plug 'vim-python/python-syntax'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
+
+" fzf vim preview window
+let g:fzf_preview_window = ['right,30%', 'ctrl-/']
 
 " Python syntax highlighting
 let g:python_highlight_all = 1
